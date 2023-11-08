@@ -10,14 +10,14 @@ build:
   stage: build
   script:
     - rustup default $RUST_VERSION
-    - cargo build --release
+    - cargo version
 
 deploy:
   stage: deploy
   script:
-    - rustup default $RUST_VERSION
-    - cargo build --release
-    - echo "Deploy your release here"  # Add deployment steps
-    - tar czf pooi-$CI_COMMIT_REF_NAME.tar.gz target/release/pooi
+    - git archive --format=tar.gz -o pooi-$CI_COMMIT_REF_NAME.tar.gz HEAD
+  artifacts:
+    paths:
+      - pooi-$CI_COMMIT_REF_NAME.tar.gz
   only:
     - tags
