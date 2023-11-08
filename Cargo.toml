@@ -1,6 +1,6 @@
 [package]
 name = "pooi"
-version = "0.0.1"
+version = "0.2.1"
 authors = ["Vysakh Premkumar <vysakhpr218@gmail.com>"]
 edition = "2021"
 description = "trivia on the command line."
