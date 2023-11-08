@@ -1,0 +1,30 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  RUST_VERSION: stable
+
+build:
+  stage: build
+  script:
+    - rustup default $RUST_VERSION
+    - cargo build --release
+
+test:
+  stage: test
+  script:
+    - rustup default $RUST_VERSION
+    - cargo test
+
+deploy:
+  stage: deploy
+  script:
+    - rustup default $RUST_VERSION
+    - cargo build --release
+    - echo "Deploy your release here"  # Add deployment steps
+    - tar czf pooi-$CI_COMMIT_REF_NAME.tar.gz target/release/pooi
+    - curl --header "PRIVATE-TOKEN: $CI_JOB_TOKEN" --upload-file pooi-$CI_COMMIT_REF_NAME.tar.gz "$CI_API_V4_URL/projects/$CI_PROJECT_ID/releases/1/assets/links"
+  only:
+    - tags
