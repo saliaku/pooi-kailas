@@ -1,10 +1,5 @@
-```
-      ▪  ▄▄ 
-▪     ██ ██▌
- ▄█▀▄ ▐█·▐█·
-▐█▌.▐▌▐█▌.▀ 
- ▀█▄▀▪▀▀▀ ▀  - trivia on the command line
-```
+![](./pooi.png)
+- trivia on the command line
 
 ![define_ah](https://user-images.githubusercontent.com/53883649/146692265-ec042204-7cbd-4918-89fa-10d47d1bf621.jpg)
 
