@@ -25,6 +25,5 @@ deploy:
     - cargo build --release
     - echo "Deploy your release here"  # Add deployment steps
     - tar czf pooi-$CI_COMMIT_REF_NAME.tar.gz target/release/pooi
-    - curl --header "PRIVATE-TOKEN: $CI_JOB_TOKEN" --upload-file pooi-$CI_COMMIT_REF_NAME.tar.gz "$CI_API_V4_URL/projects/$CI_PROJECT_ID/releases/1/assets/links"
   only:
     - tags
