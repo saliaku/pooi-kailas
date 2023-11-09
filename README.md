@@ -1,7 +1,7 @@
 ![](./pooi.png)
 - trivia on the command line
 
-![define_ah](https://user-images.githubusercontent.com/53883649/146692265-ec042204-7cbd-4918-89fa-10d47d1bf621.jpg)
+![define_ah](https://files.mastodon.social/media_attachments/files/111/377/440/489/281/999/original/da4f92e91b4ea911.png)
 
 use ```pooi --help``` for full usage information
 
