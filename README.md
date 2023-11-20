@@ -59,6 +59,10 @@ a PowerShell completion script is located at the following path ```.\etc\complet
 
 ### Pre-Compiled version for Linux is available in the Release section. You may download that and run it using ./pooi or move it to your $PATH
 
+## Usage
+
+
+
 ### TODO:
 
 - [x] shell completion scripts
@@ -69,7 +73,7 @@ a PowerShell completion script is located at the following path ```.\etc\complet
 - [ ] general code improvements (and probable bug fixes)
 
 ### TO-DO List @tellmeY18
-- [ ] package it for cargo
+- [x] package it for cargo
 - [ ] package for debian
 - [x] add to AUR
 - [ ] package for Arch mebbe ?
