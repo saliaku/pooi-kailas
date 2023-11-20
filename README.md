@@ -1,16 +1,32 @@
 ![](./pooi.png)
 - trivia on the command line
 
-![define_ah](https://files.mastodon.social/media_attachments/files/111/377/440/489/281/999/original/da4f92e91b4ea911.png)
+## What is pooi?
 
-use ```pooi --help``` for full usage information
+**pooi** project is a an attempt to keep the cli user more attatched to cli environment even when there is a need to perform an arbitary web search. The goal is to make pooi feature rich enough so that the user can perform as many web search functions and get the reslts in the commandline itself instead of opening up a fully featured web browser.
 
-## dependencies:
+use ```pooi --help``` for full usage information 
 
-on all platforms the only thing you need installed is cargo.
+## Installation
 
-+ Windows: https://win.rustup.rs/
-+ Linux/macOS: ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh``` (or use your distro's package manager)
+### On Arch Linux
+Pooi is available in the [AUR](https://aur.archlinux.org/packages/pooi)
+you can use an AUR Helper such as paru or yay'
+```shell
+paru -S pooi
+```
+or
+```shell
+yay -S pooi
+```
+### All the other Linux distros/ macOS can install **cargo** 
+ ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh``` (or use your distro's package manager)
+
+and then run 
+
+```shell
+cargo install pooi
+```
 
 this is only required for building the binary, if you have no more use for cargo you can remove it afterwards
 
@@ -39,7 +55,7 @@ then make a new folder in a location of your choosing
 
 following [this](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53) guide you can add your new folder to you environment PATH
 
-a PowerShell completion script is located at the following path ```.\etc\completions\_oi.ps1``` but I currently have no idea where to put it (sorry!)
+a PowerShell completion script is located at the following path ```.\etc\completions\_pooi.ps1``` but I currently have no idea where to put it (sorry!)
 
 ### Pre-Compiled version for Linux is available in the Release section. You may download that and run it using ./pooi or move it to your $PATH
 
