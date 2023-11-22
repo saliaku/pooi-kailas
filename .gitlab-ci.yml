@@ -1,4 +1,4 @@
-image: "rust:latest"
+
 stages:
   - build
   - deploy
@@ -8,9 +8,15 @@ variables:
 
 build:
   stage: build
+  image: "rust:latest"
   script:
-    - rustup default $RUST_VERSION
-    - cargo version
+    - cargo install cargo-deb
+    - cargo build --release
+    - cargo-deb
+  artifacts:
+    paths:
+      - target/debian/*.deb
+
 
 deploy:
   stage: deploy
