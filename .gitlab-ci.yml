@@ -1,4 +1,3 @@
-
 stages:
   - build
   - deploy
@@ -9,6 +8,10 @@ variables:
 build:
   stage: build
   image: "rust:latest"
+  before_script:
+    - apt-get update && apt-get install -y cmake  # For Debian/Ubuntu based images
+    # Uncomment the following line for CentOS/RHEL based images
+    #- yum install -y cmake
   script:
     - cargo install cargo-deb
     - cargo build --release
@@ -16,7 +19,6 @@ build:
   artifacts:
     paths:
       - target/debian/*.deb
-
 
 deploy:
   stage: deploy
