@@ -1,21 +1,21 @@
 stages:
-  - mirror
+  # - mirror
   - build
   - deploy
 
 variables:
   RUST_VERSION: stable
 
-mirror:
-  stage: mirror
-  script:
-    - git clone --mirror https://gitlab.com/saliaku/pooi-kailas.git mirror_repo
-    - cd mirror_repo
-    - git remote set-url --push origin https://github.com/saliaku/pooi-kailas.git
-    - git fetch -p origin
-    - git push --mirror origin
-  only:
-    - master  # or specific branches you want to mirror
+# mirror:
+#   stage: mirror
+#   script:
+#     - git clone --mirror https://gitlab.com/saliaku/pooi-kailas.git mirror_repo
+#     - cd mirror_repo
+#     - git remote set-url --push origin https://github.com/saliaku/pooi-kailas.git
+#     - git fetch -p origin
+#     - git push --mirror origin
+#   only:
+#     - main  # or specific branches you want to mirror
 
 
 build:
