@@ -24,6 +24,8 @@ mod summary;
 mod translate;
 mod weather;
 
+
+//details funtion used to print a table of all the valid answer selectors when the -L --list option is used
 pub fn details() -> [(&'static str, &'static str, &'static str, &'static str); 17] {
     // selector name - single "word" (no whitespace), preferably descriptive
     // result description
@@ -135,6 +137,9 @@ pub fn details() -> [(&'static str, &'static str, &'static str, &'static str); 1
     ]
 }
 
+
+
+//print_list funtion used to print a table of all the valid answer selectors when the -L --list option is used
 pub fn print_list(details: [(&'static str, &'static str, &'static str, &'static str); 17]) {
     let mut t = Table::new();
     t.load_preset(UTF8_FULL);
@@ -170,6 +175,8 @@ pub fn print_list(details: [(&'static str, &'static str, &'static str, &'static 
     println!("{}", t);
     std::process::exit(0)
 }
+
+
 
 pub fn print_answer(
     data: &scraper::Html, answers: Vec<&str>, tty: &bool, w: usize, quiet: &bool, total: Vec<&str>

@@ -1,13 +1,22 @@
 use clap::{App, Arg};
 
+// Function to build and configure the command-line interface
 pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
+    // Create a new command-line application named "pooi!"
     App::new("pooi!")
+        // Set the author of the application
         .author("David Sherriff <d.sherriff.81@gmail.com>")
+        // Short description about the application
         .about("please use --help for more detailed information")
+        // Long description about the application
         .long_about("trivia on the command line.")
+        // Set the version of the application
         .version("0.2.1")
+        // Set a custom help template
         .help_template("{bin}\n{about}\n\n{usage-heading}\n    {usage}\n\n{all-args}\n\nversion {version} by {author}\nplease report any bugs to https://github.com/tellmeY18/pooi/issues")
 
+        // Define the command-line arguments
+        // 'all' argument
         .arg(Arg::new("all")
             .short('a')
             .long("all")
@@ -15,6 +24,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             .help("Prints all of the answers found")
         )
 
+        // 'urls' argument
         .arg(Arg::new("urls")
             .short('u')
             .long("urls")
@@ -26,6 +36,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             )
         )
 
+        // 'quiet' argument
         .arg(Arg::new("quiet")
             .short('q')
             .long("quiet")
@@ -37,6 +48,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             )
         )
 
+        // 'raw' argument
         .arg(Arg::new("raw")
             .short('r')
             .long("raw")
@@ -49,6 +61,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             )
         )
 
+        // 'save' argument
         .arg(Arg::new("save")
             .short('s')
             .long("save")
@@ -63,6 +76,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             )
         )
 
+        // 'cache' argument
         .arg(Arg::new("cache")
             .short('c')
             .long("cache")
@@ -71,6 +85,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             .help("Use the most recent cached HTML")
         )
 
+        // 'clean' argument
         .arg(Arg::new("clean")
             .long("clean")
             .exclusive(true)
@@ -78,6 +93,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             .help("Remove all previously saved results")
         )
 
+        // 'list' argument
         .arg(Arg::new("list")
             .short('L')
             .long("list")
@@ -90,6 +106,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             )
         )
 
+        // 'language' argument
         .arg(Arg::new("language")
             .short('l')
             .long("lang")
@@ -105,6 +122,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             .value_hint(clap::ValueHint::Other)
         )
 
+        // 'selectors' argument
         .arg(Arg::new("selectors")
             .short('p')
             .long("pick")
@@ -121,6 +139,7 @@ pub fn build<'a>(selectors: &'a [&str]) -> App<'a> {
             )
         )
 
+        // 'query' argument
         .arg(Arg::new("query")
             .conflicts_with_all(&["cache", "clean", "list"])
             .help("Whaddya wanna know?")
