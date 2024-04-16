@@ -9,7 +9,7 @@ variables:
 mirror:
   stage: mirror
   script:
-    - git clone --mirror git@gitlab.com:saliaku/pooi-kailas.git mirror_repo
+    - git clone --mirror https://gitlab.com/saliaku/pooi-kailas.git mirror_repo
     - cd mirror_repo
     - git remote set-url --push origin git@github.com:saliaku/pooi-kailas.git
     - git fetch -p origin
